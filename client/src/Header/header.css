@@ -1,0 +1,28 @@
+#headerWrapper{
+    display: flex;
+    padding: 20px;
+    z-index: 500;
+    position: absolute;
+    padding-left: 37px;
+}
+
+#headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 6.75vw;
+
+}
+
+#headerHome {
+    width: 90vw;
+    color: #e7e7e7;
+    font-size: 1.8vw;
+}
+
+#dropdown {
+    height: 5vw;
+    width: 5vw;
+    
+}

@@ -1,0 +1,24 @@
+#sidebarWrapper{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 10vw;
+    background-color: rgb(73, 73, 73);
+    box-shadow: 1px 0px 10px 1px white;
+}
+
+.sidebarContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 10vw;
+    align-items: center;
+    color: #e7e7e7;
+    font-size: 1.8vw;
+}
+
+.options:hover {
+    text-shadow: 0px 0px 30px;
+    transition: .25s all ease;
+}
