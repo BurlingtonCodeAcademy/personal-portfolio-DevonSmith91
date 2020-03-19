@@ -1,0 +1,34 @@
+/* #aboutWrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    width: auto;
+    height: auto;
+    margin-right: 30px;
+    
+    
+}
+
+#aboutContainer{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    width: 82vw;
+    height: 95vh;
+    background-color: rgb(73, 73, 73);
+    box-shadow: -1px 0px 10px 1px white;
+
+} */
+
+#aboutWrapper{
+    width: 100%;
+    height: 100%;
+}
+
+#aboutContainer{
+    background-color: pink;
+    width: 100%;
+    height: 100%;
+
+}

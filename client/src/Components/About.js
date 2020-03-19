@@ -1,5 +1,5 @@
 import React from 'react'
-import './about.css'
+import '../Styles/about.css'
 
 function About(props) {
     return (

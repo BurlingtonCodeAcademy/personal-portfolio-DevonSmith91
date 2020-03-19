@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../Header/Header.js'
-import Sidebar from '../Sidebar/Sidebar.js'
-import About from '../About/About.js'
-import './App.css';
+import Header from './Header.js'
+import Sidebar from './Sidebar.js'
+import Info from './info.js'
+import '../Styles/App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,19 +30,19 @@ class App extends React.Component {
     )
   }
 
-  aboutHandler = () => {
-    this.setState(prevState => ({
-      about: !prevState.about
-    }))
-  }
-
   render() {
     return (
       <div id="App" >
         <Header sidebarHandler={this.sidebarHandler} rotate={this.state.rotate} />
         <div id='midContainer'>
-          {this.state.sidebar ? <Sidebar aboutHandler={this.aboutHandler} about={this.state.about} /> : null}
-          {this.state.about ? <About /> : null}
+          <div>
+            {this.state.sidebar ? <Sidebar aboutHandler={this.aboutHandler} about={this.state.about} /> : null}
+          </div>
+          <div id='informationWrapper'>
+            <div id='informationDisplay'>
+              <Info />
+            </div>
+          </div>
         </div>
       </div>
     );

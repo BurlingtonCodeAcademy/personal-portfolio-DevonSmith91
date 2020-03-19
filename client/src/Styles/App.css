@@ -1,0 +1,29 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(36, 36, 36);
+    font-family: 'Bellota Text', cursive;
+}
+
+#midContainer{
+    display: flex;
+}
+
+#informationWrapper{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#informationDisplay{
+    display: flex;
+    width: 81vw;
+    height: 78vh;
+    justify-content: flex-end;
+    align-content: flex-end;
+    color: white;
+    border: 1px white solid;
+    margin: 20px;
+}

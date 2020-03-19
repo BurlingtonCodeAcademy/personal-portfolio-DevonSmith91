@@ -3,7 +3,8 @@
     padding: 20px;
     z-index: 500;
     position: absolute;
-    padding-left: 37px;
+    padding-left: 2.6vw;
+    width: 100vw;
 }
 
 #headerContainer {
@@ -11,18 +12,23 @@
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    width: 6.75vw;
+    width: 100vw;
 
 }
 
 #headerHome {
-    width: 90vw;
     color: #e7e7e7;
     font-size: 1.8vw;
+}
+
+#headerText {
+    display: flex;
+    width: 100vw;
+    color: white;
+    font-size: 6vw;
 }
 
 #dropdown {
     height: 5vw;
     width: 5vw;
-    
 }
