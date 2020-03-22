@@ -16,12 +16,67 @@ class App extends React.Component {
       about: false,
       contact: false,
       hobbies: false,
-      projects: false,
-      headerText: ''
+      work: false,
+      headerText: '',
+      currentPath: undefined,
     }
   }
 
-
+  pageUpdate = () => {
+    if (this.state.currentPath !== window.location.pathname) {
+      if (window.location.pathname === '/') {
+        this.setState({
+          home: true,
+          about: false,
+          contact: false,
+          hobbies: false,
+          work: false,
+          currentPath: window.location.pathname,
+          headerText: 'Devon Smith'
+        })
+      } else if (window.location.pathname === '/about') {
+        this.setState({
+          home: false,
+          about: true,
+          contact: false,
+          hobbies: false,
+          work: false,
+          currentPath: window.location.pathname,
+          headerText: 'About'
+        })
+      } else if (window.location.pathname === '/work') {
+        this.setState({
+          home: false,
+          about: false,
+          contact: false,
+          hobbies: false,
+          work: true,
+          currentPath: window.location.pathname,
+          headerText: 'Work'
+        })
+      } else if (window.location.pathname === '/hobbies') {
+        this.setState({
+          home: false,
+          about: false,
+          contact: false,
+          hobbies: true,
+          work: false,
+          currentPath: window.location.pathname,
+          headerText: 'Hobbies'
+        })
+      } else if (window.location.pathname === '/contact') {
+        this.setState({
+          home: false,
+          about: false,
+          contact: true,
+          hobbies: false,
+          work: false,
+          currentPath: window.location.pathname,
+          headerText: 'Contact Me'
+        })
+      }
+    }
+  }
 
   contentHandler = (event) => {
     if (event.target.id === 'homeLink') {
@@ -30,7 +85,9 @@ class App extends React.Component {
         about: false,
         contact: false,
         hobbies: false,
-        projects: false,
+        work: false,
+        currentPath: window.location.pathname,
+
       })
     } else if (event.target.id === 'aboutLink') {
       this.setState({
@@ -38,15 +95,19 @@ class App extends React.Component {
         about: true,
         contact: false,
         hobbies: false,
-        projects: false,
+        work: false,
+        currentPath: window.location.pathname,
+
       })
-    } else if (event.target.id === 'projectsLink') {
+    } else if (event.target.id === 'workLink') {
       this.setState({
         home: false,
         about: false,
         contact: false,
         hobbies: false,
-        projects: true,
+        work: true,
+        currentPath: window.location.pathname,
+
       })
     } else if (event.target.id === 'hobbiesLink') {
       this.setState({
@@ -54,7 +115,9 @@ class App extends React.Component {
         about: false,
         contact: false,
         hobbies: true,
-        projects: false,
+        work: false,
+        currentPath: window.location.pathname,
+
       })
     } else if (event.target.id === 'contactLink') {
       this.setState({
@@ -62,34 +125,35 @@ class App extends React.Component {
         about: false,
         contact: true,
         hobbies: false,
-        projects: false,
+        work: false,
+        currentPath: window.location.pathname,
       })
     }
   }
 
   headerHandler = () => {
-    if(this.state.home === true) {
+    if (this.state.home === true) {
       this.setState({
         headerText: 'Devon Smith'
       })
-    } else if(this.state.about === true) {
+    } else if (this.state.about === true) {
       this.setState({
         headerText: 'About'
       })
-    } else if(this.state.contact === true) {
+    } else if (this.state.contact === true) {
       this.setState({
         headerText: 'Contact Me'
       })
-    } else if(this.state.hobbies === true) {
+    } else if (this.state.hobbies === true) {
       this.setState({
         headerText: 'Hobbies'
       })
-    } else if(this.state.projects === true) {
+    } else if (this.state.work === true) {
       this.setState({
-        headerText: 'Projects'
+        headerText: 'Work'
       })
     }
-  } 
+  }
 
   sidebarHandler = () => {
     let newRotation
@@ -121,7 +185,7 @@ class App extends React.Component {
           </div>
           {/* container holding the Info page */}
         </div>
-        <Info headerText={this.state.headerText} headerHandler={this.headerHandler} sidebar={this.state.sidebar}/>
+        <Info pageUpdate={this.pageUpdate}headerText={this.state.headerText} headerHandler={this.headerHandler} sidebar={this.state.sidebar} />
       </div>
 
     );

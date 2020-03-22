@@ -11,7 +11,7 @@ function Sidebar(props) {
                     <div></div>
                     <Link to='/' className='options' id='homeLink' onClick={props.contentHandler}>Home</Link>
                     <Link to='/about' className='options' id='aboutLink' onClick={props.contentHandler}>About </Link>
-                    <Link to='/projects' className='options' id='projectsLink' onClick={props.contentHandler}>Projects</Link>
+                    <Link to='/work' className='options' id='workLink' onClick={props.contentHandler}>Work</Link>
                     <Link to='/hobbies' className='options' id='hobbiesLink' onClick={props.contentHandler}>Hobbies</Link>
                     <Link to='/contact' className='options' id='contactLink' onClick={props.contentHandler}>Contact</Link>
                 </FadeIn>

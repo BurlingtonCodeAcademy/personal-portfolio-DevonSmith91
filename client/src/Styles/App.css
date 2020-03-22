@@ -55,6 +55,26 @@ body{
     position: absolute
 }
 
+/* Formatting for the Content */
+
+#formatWrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+}
+
+#formatContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
 /* Header Section */
 
 #headerContainer {
@@ -84,8 +104,6 @@ body{
         padding-right: 29vw;
     }
 }
-
-
 
 #drawnLine {
     height: .5vw;
@@ -139,26 +157,6 @@ body{
     transition: .25s all ease;
 }
 
-/* Formatting for the Main Page */
-
-#formatWrapper {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-between;
-    flex-direction: column;
-    color: white;
-}
-
-#formatContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-    height: 70vh;
-    overflow: hidden;
-}
-
 /* Home Page */
 
 #homeTitle {
@@ -183,4 +181,48 @@ body{
     margin-left: 20vw;
 }
 
+/* About Me Page */
+
+#aboutContent{
+    display: flex;
+    justify-content: space-between;
+    width: 83vw;
+    height: 67vh;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+
+#aboutText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45vw;
+    height: auto;
+    overflow: scroll;
+}
+
+#aboutTitle{
+    font-size: 4vw;
+}
+
+#aboutSubTitle{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 2.3vw;
+    align-self: flex-start;
+}
+
+#aboutWriting{
+    font-size: 1.7vw;
+    align-self: flex-start
+}
+
+#aboutPhoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    background-color: rgb(206, 206, 206);
+    margin-left: 5vw;
+}
 

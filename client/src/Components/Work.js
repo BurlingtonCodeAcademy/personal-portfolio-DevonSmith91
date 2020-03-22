@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header.js'
 
-class Projects extends React.Component {
+class Work extends React.Component {
 
     componentDidMount() {
         this.props.headerHandler()
@@ -15,10 +15,10 @@ class Projects extends React.Component {
                 </div>
                 <div id='formatContainer'>
                     This should be of my work!
-            </div>
+                </div>
             </div>
         )
     }
 }
 
-export default Projects
+export default Work
