@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header.js'
 
-class Contact extends React.Component {
+class Projects extends React.Component {
 
     componentDidMount() {
         this.props.headerHandler()
@@ -14,10 +14,11 @@ class Contact extends React.Component {
                     <Header headerText={this.props.headerText} />
                 </div>
                 <div id='formatContainer'>
-                    Why do you really need to contact me
+                    This should be of my work!
             </div>
             </div>
         )
     }
 }
-    export default Contact
+
+export default Projects

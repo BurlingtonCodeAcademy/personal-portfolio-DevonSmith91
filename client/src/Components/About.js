@@ -1,14 +1,27 @@
 import React from 'react'
-import '../Styles/about.css'
+import '../Styles/App.css'
+import Header from './Header.js'
 
-function About(props) {
+class About extends React.Component {
+
+    componentDidMount() {
+        this.props.headerHandler()
+    }
+    
+    render() {
     return (
-        <div id='aboutWrapper'>
-            <div id='aboutContainer'>
-                This shit will be my about page!
-        </div>
+        <div id='formatWrapper'>
+            <div id='headerContainer'>
+                <Header headerText={this.props.headerText}/>
+            </div>
+            <div id='formatContainer'>
+                <p> 
+                PAGE FOR THE ABOUTS
+                </p>
+            </div>
         </div>
     )
+}
 }
 
 export default About

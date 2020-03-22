@@ -1,21 +1,31 @@
 import React from 'react'
-import { Switch, Route } from 'react-router'
+import { Route } from 'react-router'
 import About from "./About.js"
 import Home from "./Home.js"
-import Works from "./Works.js"
+import Projects from "./Projects.js"
 import Hobbies from "./Hobbies.js"
 import Contact from "./Contact.js"
-import '../Styles/info.css'
+import '../Styles/App.css'
 
 function Info(props) {
     return(
-        <Switch id="infoWrapper">
-            <Route exact path='/' component={Home} />
-            <Route path='/About' component={About} />
-            <Route path='/Works' component={Works} />
-            <Route path='/Hobbies' component={Hobbies} />
-            <Route path='/Contact' component={Contact} />
-        </Switch>
+        <div id="infoWrapper">
+            <Route exact path='/'>
+                <Home headerText={props.headerText} headerHandler={props.headerHandler} sidebar={props.sidebar}/>
+            </Route>
+            <Route path='/about'>
+                <About headerText={props.headerText} headerHandler={props.headerHandler} />
+            </Route>
+            <Route path='/projects'>
+                <Projects headerText={props.headerText} headerHandler={props.headerHandler} />
+            </Route>
+            <Route path='/hobbies'>
+                <Hobbies headerText={props.headerText} headerHandler={props.headerHandler} />
+            </Route>
+            <Route path='/contact'>
+                <Contact headerText={props.headerText} headerHandler={props.headerHandler} />
+            </Route>
+        </div>
     )
 }
 

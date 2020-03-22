@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/sidebar.css'
+import '../Styles/App.css'
 import FadeIn from 'react-fade-in'
 import { Link } from 'react-router-dom'
 
@@ -9,14 +9,13 @@ function Sidebar(props) {
             <div>
                 <FadeIn className='sidebarContainer' delay='100' transitionDuration='400'>
                     <div></div>
-                    <Link to='/' className='options'>Home</Link>
-                    <Link to='/About' className='options'>About </Link>
-                    <Link to='/Works' className='options'>Works</Link>
-                    <Link to='/Hobbies' className='options'>Hobbies</Link>
-                    <Link to='/Contact' className='options'>Contact</Link>
+                    <Link to='/' className='options' id='homeLink' onClick={props.contentHandler}>Home</Link>
+                    <Link to='/about' className='options' id='aboutLink' onClick={props.contentHandler}>About </Link>
+                    <Link to='/projects' className='options' id='projectsLink' onClick={props.contentHandler}>Projects</Link>
+                    <Link to='/hobbies' className='options' id='hobbiesLink' onClick={props.contentHandler}>Hobbies</Link>
+                    <Link to='/contact' className='options' id='contactLink' onClick={props.contentHandler}>Contact</Link>
                 </FadeIn>
             </div>
-
         </div>
     )
 }

@@ -1,3 +1,12 @@
+@keyframes blink {
+    0% {opacity: 0%}
+    25% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+
 body{
     padding: 0;
     margin: 0;
@@ -5,25 +14,173 @@ body{
     font-family: 'Bellota Text', cursive;
 }
 
-#midContainer{
+#App {
     display: flex;
+
 }
 
-#informationWrapper{
+#leftSide{
+    display: flex;
+    flex-direction: column;
+}
+
+#headerArrow{
+    z-index: 400;
+    padding-left: 2.5vw;
+    padding-top: 7vh;
+    position: absolute
+}
+
+#dropdownOpen {
+    height: 5vw;
+    cursor: pointer;
+    z-index: 500;
+}
+
+#dropdownClosed {
+    height: 5vw;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    z-index: 500;
+}
+
+#contentWrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+    position: absolute
+}
+
+/* Header Section */
+
+#headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-top: 5.3vh;
+    padding-left: 7.8vh;
+}
+
+#headerText {
+    display: flex;
+    color: white;
+    font-size: 6vw;
+    position: absolute;
+    margin-left: 3.6vw;
+}
+
+@keyframes drawLineHome {
+    0% {
+        margin-left: 2vw;
+        padding-right: 0vw;
+    }
+    100% {
+        margin-left: 4.15vw;
+        padding-right: 29vw;
+    }
+}
+
+
+
+#drawnLine {
+    height: .5vw;
+    width: 3.7vw;
+    background-color: white;
+    margin-top: 6.5vw;
+}
+
+#drawnLineOpenHome {
+    height: .5vw;
+    width: 3.7vw;
+    background-color: white;
+    margin-top: 6.5vw;
+    animation-name: drawLineHome;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+/* Sidebar page */
+
+#sidebarWrapper{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 10vw;
+    background-color: rgb(73, 73, 73);
+    box-shadow: 1px 0px 10px 1px white;
+    z-index: 300;
+    position: absolute;
+}
+
+.sidebarContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 10vw;
+    align-items: center;
+    color: #e7e7e7;
+    font-size: 1.8vw;
+}
+
+.options {
+    color: white;
+    text-decoration: none;
+    transition: .25s all ease;
+}
+
+.options:hover {
+    text-shadow: 0px 0px 30px;
+    transition: .25s all ease;
+}
+
+/* Formatting for the Main Page */
+
+#formatWrapper {
     display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
 }
 
-#informationDisplay{
+#formatContainer {
     display: flex;
-    width: 81vw;
-    height: 78vh;
     justify-content: flex-end;
-    align-content: flex-end;
-    color: white;
-    border: 1px white solid;
-    margin: 20px;
+    align-items: flex-end;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
 }
+
+/* Home Page */
+
+#homeTitle {
+    font-size: 3vw;
+    height: 90%;
+}
+
+.quoteText{
+    font-size: 2vw;
+    margin-bottom: 1.3vw;
+    margin-right: 7vw;
+}
+
+
+.lineTwo{
+    margin-left: 6vw;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.lineThree{
+    margin-left: 20vw;
+}
+
+

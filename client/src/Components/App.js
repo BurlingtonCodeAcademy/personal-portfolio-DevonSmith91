@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header.js'
 import Sidebar from './Sidebar.js'
 import Info from './info.js'
 import '../Styles/App.css';
+import arrow from '../Images/arrow-invert.png'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,10 +11,85 @@ class App extends React.Component {
 
     this.state = {
       sidebar: false,
-      about: false,
       rotate: 270,
+      home: true,
+      about: false,
+      contact: false,
+      hobbies: false,
+      projects: false,
+      headerText: ''
     }
   }
+
+
+
+  contentHandler = (event) => {
+    if (event.target.id === 'homeLink') {
+      this.setState({
+        home: true,
+        about: false,
+        contact: false,
+        hobbies: false,
+        projects: false,
+      })
+    } else if (event.target.id === 'aboutLink') {
+      this.setState({
+        home: false,
+        about: true,
+        contact: false,
+        hobbies: false,
+        projects: false,
+      })
+    } else if (event.target.id === 'projectsLink') {
+      this.setState({
+        home: false,
+        about: false,
+        contact: false,
+        hobbies: false,
+        projects: true,
+      })
+    } else if (event.target.id === 'hobbiesLink') {
+      this.setState({
+        home: false,
+        about: false,
+        contact: false,
+        hobbies: true,
+        projects: false,
+      })
+    } else if (event.target.id === 'contactLink') {
+      this.setState({
+        home: false,
+        about: false,
+        contact: true,
+        hobbies: false,
+        projects: false,
+      })
+    }
+  }
+
+  headerHandler = () => {
+    if(this.state.home === true) {
+      this.setState({
+        headerText: 'Devon Smith'
+      })
+    } else if(this.state.about === true) {
+      this.setState({
+        headerText: 'About'
+      })
+    } else if(this.state.contact === true) {
+      this.setState({
+        headerText: 'Contact Me'
+      })
+    } else if(this.state.hobbies === true) {
+      this.setState({
+        headerText: 'Hobbies'
+      })
+    } else if(this.state.projects === true) {
+      this.setState({
+        headerText: 'Projects'
+      })
+    }
+  } 
 
   sidebarHandler = () => {
     let newRotation
@@ -33,18 +108,22 @@ class App extends React.Component {
   render() {
     return (
       <div id="App" >
-        <Header sidebarHandler={this.sidebarHandler} rotate={this.state.rotate} />
-        <div id='midContainer'>
-          <div>
-            {this.state.sidebar ? <Sidebar aboutHandler={this.aboutHandler} about={this.state.about} /> : null}
+        <div id='leftSide'>
+          {/* Arrow click picture */}
+          <div id='headerArrow' onClick={this.sidebarHandler}>
+            {/* Changing the state of animation on the arrow based on if the sidebar is open or not */}
+            {this.state.sidebar ? <img style={{ transform: `rotate(${this.state.rotate}deg)`, transition: '.5s all ease' }} id='dropdownOpen' alt='dropdown arrow' src={arrow} /> : <img style={{ transform: `rotate(${this.state.rotate}deg)`, transition: '.5s all ease' }} id='dropdownClosed' alt='dropdown arrow' src={arrow} />}
           </div>
-          <div id='informationWrapper'>
-            <div id='informationDisplay'>
-              <Info />
-            </div>
+          {/* Sidebar Section */}
+          <div id='sidebar'>
+            {/* Deciding if the sidebar is showing or now */}
+            {this.state.sidebar ? <Sidebar aboutHandler={this.aboutHandler} about={this.state.about} contentHandler={this.contentHandler} /> : null}
           </div>
+          {/* container holding the Info page */}
         </div>
+        <Info headerText={this.state.headerText} headerHandler={this.headerHandler} sidebar={this.state.sidebar}/>
       </div>
+
     );
   }
 }
