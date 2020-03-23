@@ -6,7 +6,7 @@ class Contact extends React.Component {
     componentDidMount() {
         this.props.headerHandler()
     }
-    
+
     render() {
         return (
             <div id='formatWrapper'>
@@ -14,10 +14,14 @@ class Contact extends React.Component {
                     <Header headerText={this.props.headerText} />
                 </div>
                 <div id='formatContainer'>
-                    Why do you really need to contact me
-            </div>
+                    <div id='genericID'>
+                        <div>
+                        Why do you really need to contact me
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
-    export default Contact
+export default Contact
