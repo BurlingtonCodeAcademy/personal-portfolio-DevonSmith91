@@ -16,6 +16,11 @@ class About extends React.Component {
                 </div>
                 <div id='formatContainer'>
                     <div id='aboutContent'>
+                    <div id='aboutPhoto'>
+                            <div>
+                            THIS WILL BE A PHOTO OF ME
+                            </div>
+                        </div>
                         <div id='aboutText'>
                             <div id='aboutTitle'>
                                 Hey, I'm Devon.
@@ -33,11 +38,7 @@ class About extends React.Component {
                                 The World is my oyster! As of right now I am currently looking for an opportunity for employment, preferably in the North East or doing remote work, that will allow me to continue to learn and will encourage me to encorporate my artistic talents into my development work.
                             </div>
                         </div>
-                        <div id='aboutPhoto'>
-                            <div>
-                            THIS WILL BE A PHOTO OF ME
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>
