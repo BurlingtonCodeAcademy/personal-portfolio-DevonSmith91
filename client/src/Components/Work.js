@@ -4,21 +4,26 @@ import geoVTThumb from '../Images/geo-vt-thumb.png'
 import yelpThumb from '../Images/yelpington-thumb.png'
 import blogThumb from '../Images/mockblog-thumb.png'
 
-class Work extends React.Component {
+// setting up the work class
 
+class Work extends React.Component {
+    // on mounting, adjust header title
     componentDidMount() {
         this.props.headerHandler()
     }
-
+    // render the page
     render() {
         return (
             <div id='formatWrapper'>
                 <div id='headerContainer'>
+                    {/* calling the Header for the work Page */}
                     <Header headerText={this.props.headerText} />
                 </div>
+                {/* general information on the work page */}
                 <div id='formatContainer'>
                     <div id='workContent'>
                         <div id='languages'>
+                            {/* Coding related skills */}
                             <div id='workSubTitle'>
                                 Code Skills:
                             </div>
@@ -30,6 +35,7 @@ class Work extends React.Component {
                                 <li>Express JS</li>
                                 <li>Mongo DB</li>
                             </ul>
+                            {/* Personal Skills */}
                             <div id='workSubTitle'>
                                 Soft Skills
                             </div>
@@ -41,6 +47,7 @@ class Work extends React.Component {
                                 <li>Time Managment</li>
                             </ul>
                         </div>
+                        {/* examples of my projects and their descriptions as well as what will be links to the page and github repos */}
                         <div id='workExamples'>
                             <div id='workProjects'>
                                 <img className='picture' src={geoVTThumb} alt="Geo VT Thumbnail" />

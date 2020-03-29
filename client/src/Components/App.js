@@ -3,11 +3,12 @@ import Sidebar from './Sidebar.js'
 import Info from './info.js'
 import '../Styles/App.css';
 import arrow from '../Images/arrow-invert.png'
-
+// creating the class for the entire App
 class App extends React.Component {
   constructor(props) {
     super(props)
 
+// State for the whole program
 
     this.state = {
       sidebar: false,
@@ -21,7 +22,7 @@ class App extends React.Component {
       currentPath: undefined,
     }
   }
-
+// Logic block changing the state depending on what the path is
   pageUpdate = () => {
     if (this.state.currentPath !== window.location.pathname) {
       if (window.location.pathname === '/') {
@@ -77,7 +78,7 @@ class App extends React.Component {
       }
     }
   }
-
+// Logic Block changing the state depending on what link is clicked on
   contentHandler = (event) => {
     if (event.target.id === 'homeLink') {
       this.setState({
@@ -87,7 +88,6 @@ class App extends React.Component {
         hobbies: false,
         work: false,
         currentPath: window.location.pathname,
-
       })
     } else if (event.target.id === 'aboutLink') {
       this.setState({
@@ -97,7 +97,6 @@ class App extends React.Component {
         hobbies: false,
         work: false,
         currentPath: window.location.pathname,
-
       })
     } else if (event.target.id === 'workLink') {
       this.setState({
@@ -107,7 +106,6 @@ class App extends React.Component {
         hobbies: false,
         work: true,
         currentPath: window.location.pathname,
-
       })
     } else if (event.target.id === 'hobbiesLink') {
       this.setState({
@@ -117,7 +115,6 @@ class App extends React.Component {
         hobbies: true,
         work: false,
         currentPath: window.location.pathname,
-
       })
     } else if (event.target.id === 'contactLink') {
       this.setState({
@@ -130,7 +127,7 @@ class App extends React.Component {
       })
     }
   }
-
+// logic block changing the content of the header depending on the state
   headerHandler = () => {
     if (this.state.home === true) {
       this.setState({
@@ -154,7 +151,7 @@ class App extends React.Component {
       })
     }
   }
-
+// changing the direction the arrow faces as well as if the sidebar is visible
   sidebarHandler = () => {
     let newRotation
     if (this.state.rotate === 270) {
@@ -168,11 +165,11 @@ class App extends React.Component {
     })
     )
   }
-
+// render the entire page
   render() {
     return (
       <div id="App" >
-        <div id='leftSide'>
+        <div id='leftSideHome'>
           {/* Arrow click picture */}
           <div id='headerArrow' onClick={this.sidebarHandler}>
             {/* Changing the state of animation on the arrow based on if the sidebar is open or not */}

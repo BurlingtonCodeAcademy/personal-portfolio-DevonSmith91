@@ -2,26 +2,32 @@ import React from 'react'
 import '../Styles/App.css'
 import Header from './Header.js'
 
-class About extends React.Component {
+// creating a class for the About Page
 
+class About extends React.Component {
+    // on mounting, adjust header title
     componentDidMount() {
         this.props.headerHandler()
     }
-
+    // render the page
     render() {
         return (
             <div id='formatWrapper'>
                 <div id='headerContainer'>
+                    {/* calling the Header for the about Page */}
                     <Header headerText={this.props.headerText} />
                 </div>
+                {/* general information on about page */}
                 <div id='formatContainer'>
                     <div id='aboutContent'>
                     <div id='aboutPhoto'>
+                        {/* Photo of myself */}
                             <div>
                             THIS WILL BE A PHOTO OF ME
                             </div>
                         </div>
                         <div id='aboutText'>
+                            {/* description of myself and what I'm looking for */}
                             <div id='aboutTitle'>
                                 Hey, I'm Devon.
                             </div>

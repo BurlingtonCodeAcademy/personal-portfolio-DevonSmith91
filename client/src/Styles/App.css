@@ -1,9 +1,4 @@
-@keyframes blink {
-    0% {opacity: 0%}
-    25% {opacity: 1;}
-    75% {opacity: 1;}
-    100% {opacity: 0;}
-}
+/* Removing the inherent styles and setting full page css */
 
 body{
     padding: 0;
@@ -17,9 +12,18 @@ body{
 
 }
 
-#leftSide{
+#leftSideHome{
     display: flex;
     flex-direction: column;
+}
+
+/* Animation for the Blinking Arrow Drop Down */
+
+@keyframes blink {
+    0% {opacity: 0%}
+    25% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
 }
 
 #headerArrow{
@@ -44,16 +48,7 @@ body{
     z-index: 500;
 }
 
-#contentWrapper{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100vw;
-    height: 100vh;
-    position: absolute
-}
-
-/* Formatting for the Content */
+/* Formatting for the Content on all Sub Pages */
 
 #formatWrapper {
     display: flex;
@@ -91,6 +86,8 @@ body{
     position: absolute;
     margin-left: 3.6vw;
 }
+
+/* Animation for the Line being drawn on the Header */
 
 @keyframes drawLineHome {
     0% {
